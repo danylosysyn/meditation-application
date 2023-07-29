@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditate</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $(window).on('load', () => {
+            $(".main__time-button").animate({
+                width: "90%",
+                "border-radius": "30px",
+                opacity: '0.8'
+            }, 1000).animate({
+                width: "80%",
+                "border-radius": "10px",
+                opacity: 1
+            }, 500)
+
+            $(".main__mode_el").delay(2000).animate({
+                width: "125px",
+                height: "125px"
+            }, 1000).animate({
+                width: "100px",
+                height: "100px"
+            }, "slow")
+
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div id="video">
+        <video autoplay muted loop id="video__forest">
+            <source src="./media/videos/forest.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop id="video__rain">
+            <source src="./media/videos/rain.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop id="video__beach">
+            <source src="./media/videos/beach.mp4" type="video/mp4">
+        </video>
+    </div>
+    <audio id="audio__forest" preload="auto" loop>
+        <source src="./media/sounds/forest.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio__rain" preload="auto" loop>
+        <source src="./media/sounds/rain.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio__beach" preload="auto" loop>
+        <source src="./media/sounds/beach.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="main">
+        <div class="main__time">
+            <button type="submit" class="main__time-button 2min" data-time="120">2 minutes</button>
+            <button type="submit" class="main__time-button 5min" data-time="300">5 minutes</button>
+            <button type="submit" class="main__time-button 10min" data-time="600">10 minutes</button>
+
+        </div>
+        <div class="main__timer">
+            <img src="./media/svg/pause.svg" alt="" id="play">
+            <svg width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20" />
+            </svg>
+            <svg width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle id="moving-outline" cx="226.5" cy="226.5" r="216.5" stroke="#018EBA" stroke-width="20" />
+            </svg>
+            <p class="main__display">0:00</p>
+        </div>
+        <div class="main__mode">
+            <button type="submit" class="main__mode_el main__forest" vid="video__forest" snd="audio__forest">
+                <span class="material-symbols-outlined">
+                    forest
+                </span>
+            </button>
+            <button type="submit" class="main__mode_el main__rain" vid="video__rain" snd="audio__rain">
+                <span class="material-symbols-outlined">
+                    weather_mix
+                </span>
+            </button>
+            <button type="submit" class="main__mode_el main__beach" vid="video__beach" snd="audio__beach">
+                <span class="material-symbols-outlined">
+                    waves
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <script src="./scripts/scripts.js"></script>
+</body>
+
+</html>
